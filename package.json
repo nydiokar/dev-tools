@@ -1,0 +1,9 @@
+{
+  "name": "dev-tools",
+  "private": true,
+  "description": "Miscellaneous dev utilities",
+  "scripts": {
+    "block:report": "python scripts/cc-block-report.py --open",
+    "block:report:csv": "python scripts/cc-block-report.py"
+  }
+}
