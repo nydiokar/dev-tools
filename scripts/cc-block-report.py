@@ -71,8 +71,9 @@ def bucket_time(dt):
 def get_active_block():
     """Run ccusage and extract the current active block window."""
     try:
+        npx_cmd = "npx.cmd" if sys.platform == "win32" else "npx"
         result = subprocess.run(
-            ["npx", "ccusage@latest", "claude", "blocks", "--recent", "--json"],
+            [npx_cmd, "ccusage@latest", "claude", "blocks", "--recent", "--json"],
             capture_output=True, text=True, timeout=30,
         )
         data = json.loads(result.stdout)
